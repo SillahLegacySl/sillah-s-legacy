@@ -14,97 +14,215 @@
   padding:0;
 }
 
+html{
+  scroll-behavior:smooth;
+}
+
 body{
   font-family:Arial,Helvetica,sans-serif;
   background:#f7f7f7;
   color:#111;
 }
 
-header{
-  background:#111;
-  color:#fff;
-  padding:18px 5%;
-  position:sticky;
-  top:0;
-  z-index:1000;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  box-shadow:0 2px 10px #0004;
+button,input{
+  font:inherit;
 }
 
-.logo{
-  font-size:21px;
-  font-weight:bold;
-  letter-spacing:1.5px;
-}
-
-.cart-btn{
-  background:#d4af37;
-  color:#111;
-  border:0;
-  padding:10px 15px;
-  border-radius:25px;
-  font-weight:bold;
+button{
   cursor:pointer;
 }
 
+/* HEADER */
+
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:#111;
+  color:#fff;
+  padding:14px 5%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  box-shadow:0 2px 12px #0004;
+}
+
+.logo{
+  font-size:20px;
+  font-weight:800;
+  letter-spacing:1.5px;
+}
+
+nav{
+  display:flex;
+  gap:20px;
+}
+
+nav a{
+  color:#fff;
+  text-decoration:none;
+  font-size:14px;
+}
+
+.header-actions{
+  display:flex;
+  gap:8px;
+  align-items:center;
+}
+
+.icon-btn{
+  border:0;
+  background:#222;
+  color:#fff;
+  padding:9px 11px;
+  border-radius:8px;
+}
+
+.cart-btn{
+  border:0;
+  background:#d4af37;
+  color:#111;
+  padding:10px 14px;
+  border-radius:22px;
+  font-weight:bold;
+}
+
+.badge{
+  background:#111;
+  color:#fff;
+  border-radius:50%;
+  padding:2px 6px;
+  font-size:11px;
+}
+
+/* HERO */
+
 .hero{
-  background:linear-gradient(135deg,#111,#292929);
-  color:white;
+  background:
+    radial-gradient(circle at top right,#8f7320 0,#292929 30%,#111 70%);
+  color:#fff;
   text-align:center;
-  padding:65px 20px;
+  padding:75px 20px;
+}
+
+.hero small{
+  color:#d4af37;
+  letter-spacing:3px;
+  font-weight:bold;
 }
 
 .hero h1{
-  font-size:42px;
-  margin-bottom:12px;
+  font-size:45px;
+  margin:12px 0;
+  letter-spacing:2px;
 }
 
 .hero p{
   color:#ddd;
-  font-size:17px;
-  margin-bottom:25px;
-}
-
-.shop-btn{
-  display:inline-block;
-  background:#d4af37;
-  color:#111;
-  padding:13px 25px;
-  border-radius:25px;
-  text-decoration:none;
-  font-weight:bold;
-}
-
-.search-area{
-  padding:25px 5% 10px;
-  text-align:center;
-}
-
-.search-area input{
-  width:100%;
   max-width:600px;
-  padding:14px 18px;
-  border:1px solid #ccc;
-  border-radius:30px;
-  font-size:16px;
+  margin:0 auto 25px;
+  line-height:1.6;
 }
 
-.categories{
+.hero-buttons{
   display:flex;
   justify-content:center;
   gap:10px;
   flex-wrap:wrap;
-  padding:20px 5%;
+}
+
+.btn{
+  display:inline-block;
+  padding:13px 22px;
+  border-radius:25px;
+  text-decoration:none;
+  font-weight:bold;
+  border:0;
+}
+
+.gold{
+  background:#d4af37;
+  color:#111;
+}
+
+.dark{
+  background:#fff;
+  color:#111;
+}
+
+/* GROUP */
+
+.group-banner{
+  background:#25D366;
+  color:#fff;
+  padding:18px 5%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:15px;
+  flex-wrap:wrap;
+  text-align:center;
+}
+
+.group-banner a{
+  background:#fff;
+  color:#111;
+  padding:9px 16px;
+  border-radius:20px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+/* SECTIONS */
+
+section{
+  padding:50px 5%;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:25px;
+}
+
+.section-title h2{
+  font-size:28px;
+}
+
+.section-title p{
+  color:#777;
+  margin-top:7px;
+}
+
+/* SEARCH */
+
+.search-box{
+  max-width:650px;
+  margin:0 auto 20px;
+}
+
+.search-box input{
+  width:100%;
+  padding:14px 18px;
+  border:1px solid #ccc;
+  border-radius:30px;
+  outline:none;
+}
+
+/* CATEGORIES */
+
+.categories{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:9px;
+  margin-bottom:30px;
 }
 
 .category{
   border:1px solid #111;
-  background:white;
-  padding:9px 18px;
-  border-radius:25px;
-  cursor:pointer;
+  background:#fff;
+  padding:9px 17px;
+  border-radius:22px;
 }
 
 .category.active,
@@ -113,35 +231,48 @@ header{
   color:#fff;
 }
 
+/* PRODUCTS */
+
 .products{
-  padding:20px 5% 60px;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:22px;
   max-width:1200px;
   margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
 }
 
 .product{
   background:#fff;
-  border-radius:14px;
+  border-radius:15px;
   overflow:hidden;
   box-shadow:0 3px 15px #0001;
-  transition:.2s;
-}
-
-.product:hover{
-  transform:translateY(-4px);
+  position:relative;
 }
 
 .product-image{
   height:220px;
-  background:linear-gradient(135deg,#222,#777);
   display:flex;
-  align-items:center;
   justify-content:center;
-  color:white;
-  font-size:60px;
+  align-items:center;
+  background:linear-gradient(135deg,#181818,#777);
+  color:#fff;
+  font-size:65px;
+}
+
+.favorite{
+  position:absolute;
+  top:10px;
+  right:10px;
+  width:36px;
+  height:36px;
+  border:0;
+  border-radius:50%;
+  background:#fff;
+  font-size:18px;
+}
+
+.favorite.active{
+  color:#e63946;
 }
 
 .product-info{
@@ -149,30 +280,36 @@ header{
 }
 
 .product-info h3{
-  margin-bottom:8px;
+  font-size:17px;
+  margin-bottom:6px;
 }
 
-.product-info p{
+.category-name{
   color:#777;
-  font-size:14px;
-  margin-bottom:10px;
+  font-size:13px;
 }
 
 .price{
-  color:#b18b13;
+  color:#a57e08;
+  font-size:19px;
   font-weight:bold;
-  font-size:18px;
-  margin-bottom:14px;
+  margin:10px 0;
+}
+
+.old-price{
+  color:#999;
+  font-size:13px;
+  text-decoration:line-through;
+  margin-left:5px;
 }
 
 .add-btn{
   width:100%;
   border:0;
+  padding:12px;
   background:#111;
   color:#fff;
-  padding:12px;
   border-radius:8px;
-  cursor:pointer;
   font-weight:bold;
 }
 
@@ -181,23 +318,85 @@ header{
   color:#111;
 }
 
-.empty{
-  grid-column:1/-1;
+/* OFFERS */
+
+.offers{
+  background:#111;
+  color:#fff;
+}
+
+.offer-grid{
+  max-width:1000px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:18px;
+}
+
+.offer{
+  border:1px solid #444;
+  border-radius:12px;
+  padding:22px;
   text-align:center;
-  padding:40px;
-  color:#777;
+}
+
+.offer h3{
+  color:#d4af37;
+  margin-bottom:8px;
+}
+
+/* INFO */
+
+.info-grid{
+  max-width:1000px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
+
+.info-card{
+  background:#fff;
+  padding:25px;
+  border-radius:14px;
+  text-align:center;
+  box-shadow:0 3px 12px #0001;
+}
+
+.info-card h3{
+  margin-bottom:8px;
+}
+
+.info-card p{
+  color:#666;
+  line-height:1.5;
+}
+
+/* CONTACT */
+
+.contact{
+  text-align:center;
+  background:#eee;
+}
+
+.contact-buttons{
+  margin-top:20px;
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
 }
 
 /* CART */
 
 .cart-panel{
   position:fixed;
-  right:-100%;
   top:0;
-  width:min(420px,100%);
+  right:-100%;
+  width:min(430px,100%);
   height:100vh;
-  background:white;
-  z-index:2000;
+  background:#fff;
+  z-index:3000;
   box-shadow:-5px 0 20px #0003;
   transition:.3s;
   display:flex;
@@ -211,18 +410,17 @@ header{
 .cart-header{
   background:#111;
   color:#fff;
-  padding:18px;
+  padding:17px;
   display:flex;
   justify-content:space-between;
   align-items:center;
 }
 
-.close-cart{
-  background:none;
-  color:white;
+.close{
   border:0;
-  font-size:25px;
-  cursor:pointer;
+  background:none;
+  color:#fff;
+  font-size:28px;
 }
 
 .cart-items{
@@ -238,38 +436,35 @@ header{
 
 .cart-item strong{
   display:block;
-  margin-bottom:6px;
+  margin-bottom:5px;
 }
 
 .cart-controls{
   display:flex;
   align-items:center;
-  gap:10px;
-  margin-top:8px;
+  gap:8px;
+  margin-top:9px;
 }
 
-.cart-controls button{
-  border:0;
-  background:#111;
-  color:white;
+.qty{
   width:28px;
   height:28px;
+  border:0;
   border-radius:50%;
-  cursor:pointer;
+  background:#111;
+  color:#fff;
 }
 
 .remove{
   margin-left:auto;
-  background:#eee !important;
-  color:#111 !important;
-  border-radius:5px !important;
-  width:auto !important;
-  padding:0 8px;
+  border:0;
+  padding:6px 9px;
+  border-radius:5px;
 }
 
 .cart-footer{
-  padding:18px;
   border-top:1px solid #ddd;
+  padding:17px;
 }
 
 .total{
@@ -278,27 +473,34 @@ header{
   margin-bottom:14px;
 }
 
+.order-form input{
+  width:100%;
+  padding:11px;
+  border:1px solid #ccc;
+  border-radius:7px;
+  margin-bottom:8px;
+}
+
 .whatsapp{
   width:100%;
-  border:0;
+  padding:13px;
   background:#25D366;
-  color:white;
-  padding:14px;
+  color:#fff;
+  border:0;
   border-radius:8px;
-  font-size:16px;
   font-weight:bold;
-  cursor:pointer;
 }
 
 .clear{
   width:100%;
+  padding:10px;
   margin-top:8px;
-  padding:11px;
   border:1px solid #ccc;
-  background:white;
+  background:#fff;
   border-radius:8px;
-  cursor:pointer;
 }
+
+/* FOOTER */
 
 footer{
   background:#111;
@@ -308,22 +510,20 @@ footer{
 }
 
 footer p{
-  margin:8px 0;
-  color:#ccc;
+  color:#aaa;
+  margin-top:8px;
 }
 
-.badge{
-  background:#111;
-  color:#fff;
-  border-radius:20px;
-  padding:2px 7px;
-  font-size:12px;
-  margin-left:4px;
-}
+/* MOBILE */
 
-@media(max-width:600px){
+@media(max-width:700px){
+
+  nav{
+    display:none;
+  }
+
   .hero h1{
-    font-size:31px;
+    font-size:32px;
   }
 
   .products{
@@ -332,7 +532,7 @@ footer p{
   }
 
   .product-image{
-    height:150px;
+    height:155px;
     font-size:45px;
   }
 
@@ -341,11 +541,19 @@ footer p{
   }
 
   .product-info h3{
-    font-size:15px;
+    font-size:14px;
   }
 
   .price{
+    font-size:16px;
+  }
+
+  .logo{
     font-size:15px;
+  }
+
+  .cart-btn{
+    padding:8px 10px;
   }
 }
 </style>
@@ -354,74 +562,306 @@ footer p{
 <body>
 
 <header>
+
   <div class="logo">SILLAH'S LEGACY</div>
-  <button class="cart-btn" onclick="openCart()">
-    🛒 Cart <span id="cartCount" class="badge">0</span>
-  </button>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#shop">Shop</a>
+    <a href="#offers">Offers</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div class="header-actions">
+
+    <button class="icon-btn" onclick="showFavorites()">
+      ❤️
+    </button>
+
+    <button class="cart-btn" onclick="openCart()">
+      🛒 Cart
+      <span id="cartCount" class="badge">0</span>
+    </button>
+
+  </div>
+
 </header>
 
-<section class="hero">
+<!-- HOME -->
+
+<section class="hero" id="home">
+
+  <small>WELCOME TO</small>
+
   <h1>SILLAH'S LEGACY</h1>
-  <p>Elegance • Style • Legacy</p>
-  <a href="#shop" class="shop-btn">Shop Now</a>
+
+  <p>
+    Discover elegance, style and quality in one place.
+    Explore our collection of perfumes, watches and T-shirts.
+  </p>
+
+  <div class="hero-buttons">
+
+    <a href="#shop" class="btn gold">
+      Shop Now
+    </a>
+
+    <a href="#contact" class="btn dark">
+      Contact Us
+    </a>
+
+  </div>
+
 </section>
 
-<div class="search-area">
-  <input
-    type="text"
-    id="search"
-    placeholder="Search perfumes, watches, T-shirts..."
-    oninput="displayProducts()"
+<!-- WHATSAPP GROUP -->
+
+<div class="group-banner">
+
+  <strong>💬 Join the SILLAH'S LEGACY WhatsApp Group</strong>
+
+  <a
+    href="https://chat.whatsapp.com/F1S3RZcwgQOEjSg1MkztVA"
+    target="_blank"
   >
+    Join Group
+  </a>
+
 </div>
 
-<div class="categories">
-  <button class="category active" onclick="filterCategory('All',this)">All</button>
-  <button class="category" onclick="filterCategory('Perfumes',this)">Perfumes</button>
-  <button class="category" onclick="filterCategory('Watches',this)">Watches</button>
-  <button class="category" onclick="filterCategory('T-Shirts',this)">T-Shirts</button>
-</div>
+<!-- SHOP -->
 
-<section id="shop" class="products"></section>
+<section id="shop">
 
-<footer>
-  <h2>SILLAH'S LEGACY</h2>
-  <p>Elegance, Style & Legacy</p>
-  <p>© 2026 SILLAH'S LEGACY. All rights reserved.</p>
-</footer>
+  <div class="section-title">
+
+    <h2>Our Collection</h2>
+
+    <p>Choose your style. Create your legacy.</p>
+
+  </div>
+
+  <div class="search-box">
+
+    <input
+      id="search"
+      type="text"
+      placeholder="🔎 Search products..."
+      oninput="displayProducts()"
+    >
+
+  </div>
+
+  <div class="categories">
+
+    <button
+      class="category active"
+      onclick="filterCategory('All',this)"
+    >
+      All
+    </button>
+
+    <button
+      class="category"
+      onclick="filterCategory('Perfumes',this)"
+    >
+      Perfumes
+    </button>
+
+    <button
+      class="category"
+      onclick="filterCategory('Watches',this)"
+    >
+      Watches
+    </button>
+
+    <button
+      class="category"
+      onclick="filterCategory('T-Shirts',this)"
+    >
+      T-Shirts
+    </button>
+
+  </div>
+
+  <div id="products" class="products"></div>
+
+</section>
+
+<!-- OFFERS -->
+
+<section id="offers" class="offers">
+
+  <div class="section-title">
+
+    <h2>Special Offers</h2>
+
+    <p>Limited-time deals from SILLAH'S LEGACY</p>
+
+  </div>
+
+  <div class="offer-grid">
+
+    <div class="offer">
+      <h3>🔥 New Arrivals</h3>
+      <p>Fresh styles and products are added regularly.</p>
+    </div>
+
+    <div class="offer">
+      <h3>🎁 Gift Ideas</h3>
+      <p>Find something special for someone important.</p>
+    </div>
+
+    <div class="offer">
+      <h3>✨ Premium Style</h3>
+      <p>Elegance designed to make an impression.</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- WHY US -->
+
+<section>
+
+  <div class="section-title">
+    <h2>Why SILLAH'S LEGACY?</h2>
+  </div>
+
+  <div class="info-grid">
+
+    <div class="info-card">
+      <h3>✨ Style</h3>
+      <p>Products selected with elegance and modern style in mind.</p>
+    </div>
+
+    <div class="info-card">
+      <h3>🛍️ Easy Shopping</h3>
+      <p>Choose your products, add them to your cart and order easily.</p>
+    </div>
+
+    <div class="info-card">
+      <h3>💬 WhatsApp</h3>
+      <p>Place your order directly through WhatsApp.</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact" class="contact">
+
+  <div class="section-title">
+
+    <h2>Contact SILLAH'S LEGACY</h2>
+
+    <p>We're here to help with your orders and questions.</p>
+
+  </div>
+
+  <div class="contact-buttons">
+
+    <a
+      class="btn gold"
+      href="https://chat.whatsapp.com/F1S3RZcwgQOEjSg1MkztVA"
+      target="_blank"
+    >
+      💬 Join WhatsApp Group
+    </a>
+
+    <a
+      class="btn dark"
+      href="#shop"
+    >
+      🛍️ Browse Products
+    </a>
+
+  </div>
+
+</section>
 
 <!-- CART -->
 
 <div id="cartPanel" class="cart-panel">
 
   <div class="cart-header">
+
     <h2>Your Cart</h2>
-    <button class="close-cart" onclick="closeCart()">×</button>
+
+    <button class="close" onclick="closeCart()">×</button>
+
   </div>
 
   <div id="cartItems" class="cart-items"></div>
 
   <div class="cart-footer">
+
     <div class="total">
       Total: <span id="cartTotal">SLE 0</span>
     </div>
 
+    <div class="order-form">
+
+      <input
+        id="customerName"
+        type="text"
+        placeholder="Your name"
+      >
+
+      <input
+        id="customerPhone"
+        type="tel"
+        placeholder="Your phone number"
+      >
+
+      <input
+        id="customerAddress"
+        type="text"
+        placeholder="Delivery location"
+      >
+
+    </div>
+
     <button class="whatsapp" onclick="orderWhatsApp()">
-      Order on WhatsApp
+      📱 Order on WhatsApp
     </button>
 
     <button class="clear" onclick="clearCart()">
       Clear Cart
     </button>
+
   </div>
 
 </div>
 
+<footer>
+
+  <h2>SILLAH'S LEGACY</h2>
+
+  <p>Elegance • Style • Legacy</p>
+
+  <p>© 2026 SILLAH'S LEGACY. All rights reserved.</p>
+
+</footer>
+
 <script>
 
-/* =========================
+/* ==========================
+   BUSINESS SETTINGS
+========================== */
+
+const whatsappNumber = "23273520329";
+
+const whatsappGroup =
+"https://chat.whatsapp.com/F1S3RZcwgQOEjSg1MkztVA";
+
+
+/* ==========================
    PRODUCTS
-========================= */
+========================== */
 
 const products = [
 
@@ -430,6 +870,7 @@ const products = [
     name:"Royal Oud Perfume",
     category:"Perfumes",
     price:350,
+    oldPrice:400,
     icon:"🌹"
   },
 
@@ -438,6 +879,7 @@ const products = [
     name:"Luxury Gold Perfume",
     category:"Perfumes",
     price:450,
+    oldPrice:500,
     icon:"🧴"
   },
 
@@ -446,6 +888,7 @@ const products = [
     name:"Classic Black Perfume",
     category:"Perfumes",
     price:300,
+    oldPrice:350,
     icon:"✨"
   },
 
@@ -454,6 +897,7 @@ const products = [
     name:"Royal Gold Watch",
     category:"Watches",
     price:1200,
+    oldPrice:1400,
     icon:"⌚"
   },
 
@@ -462,6 +906,7 @@ const products = [
     name:"Classic Black Watch",
     category:"Watches",
     price:950,
+    oldPrice:1100,
     icon:"⌚"
   },
 
@@ -470,6 +915,7 @@ const products = [
     name:"Luxury Silver Watch",
     category:"Watches",
     price:1100,
+    oldPrice:1250,
     icon:"⌚"
   },
 
@@ -478,6 +924,7 @@ const products = [
     name:"SILLAH'S LEGACY T-Shirt",
     category:"T-Shirts",
     price:300,
+    oldPrice:350,
     icon:"👕"
   },
 
@@ -486,6 +933,7 @@ const products = [
     name:"Classic Black T-Shirt",
     category:"T-Shirts",
     price:250,
+    oldPrice:300,
     icon:"👕"
   },
 
@@ -494,56 +942,49 @@ const products = [
     name:"Premium White T-Shirt",
     category:"T-Shirts",
     price:280,
+    oldPrice:330,
     icon:"👕"
   }
 
 ];
 
-/* =========================
-   SETTINGS
-========================= */
-
-/*
-   IMPORTANT:
-   Replace this number with your
-   WhatsApp number.
-
-   Sierra Leone country code = 232
-
-   Example:
-   23276XXXXXX
-*/
-
-const whatsappNumber = "23273520329";
-
 
 let cart = [];
+let favorites = [];
 let selectedCategory = "All";
 
 
-/* =========================
-   DISPLAY PRODUCTS
-========================= */
+/* ==========================
+   PRODUCTS
+========================== */
 
 function displayProducts(){
 
-  const container = document.getElementById("shop");
+  const container =
+    document.getElementById("products");
 
   const search =
-    document.getElementById("search").value.toLowerCase();
+    document
+      .getElementById("search")
+      .value
+      .toLowerCase();
 
-  const filtered = products.filter(product => {
+  const filtered =
+    products.filter(product => {
 
-    const matchesCategory =
-      selectedCategory === "All" ||
-      product.category === selectedCategory;
+      const categoryMatch =
+        selectedCategory === "All" ||
+        product.category === selectedCategory;
 
-    const matchesSearch =
-      product.name.toLowerCase().includes(search);
+      const searchMatch =
+        product.name
+          .toLowerCase()
+          .includes(search);
 
-    return matchesCategory && matchesSearch;
+      return categoryMatch && searchMatch;
 
-  });
+    });
+
 
   if(filtered.length === 0){
 
@@ -554,43 +995,67 @@ function displayProducts(){
 
   }
 
-  container.innerHTML = filtered.map(product => `
 
-    <div class="product">
+  container.innerHTML =
+    filtered.map(product => {
 
-      <div class="product-image">
-        ${product.icon}
-      </div>
+      const isFavorite =
+        favorites.includes(product.id);
 
-      <div class="product-info">
+      return `
 
-        <h3>${product.name}</h3>
+        <div class="product">
 
-        <p>${product.category}</p>
+          <button
+            class="favorite ${isFavorite ? "active" : ""}"
+            onclick="toggleFavorite(${product.id})"
+          >
+            ${isFavorite ? "♥" : "♡"}
+          </button>
 
-        <div class="price">
-          SLE ${product.price.toLocaleString()}
+          <div class="product-image">
+            ${product.icon}
+          </div>
+
+          <div class="product-info">
+
+            <h3>${product.name}</h3>
+
+            <div class="category-name">
+              ${product.category}
+            </div>
+
+            <div class="price">
+
+              SLE ${product.price.toLocaleString()}
+
+              <span class="old-price">
+                SLE ${product.oldPrice.toLocaleString()}
+              </span>
+
+            </div>
+
+            <button
+              class="add-btn"
+              onclick="addToCart(${product.id})"
+            >
+              🛒 Add to Cart
+            </button>
+
+          </div>
+
         </div>
 
-        <button
-          class="add-btn"
-          onclick="addToCart(${product.id})"
-        >
-          Add to Cart
-        </button>
+      `;
 
-      </div>
-
-    </div>
-
-  `).join("");
+    }).join("");
 
 }
 
 
-/* =========================
-   CATEGORY FILTER
-========================= */
+/* ==========================
+   CATEGORY
+========================== */
 
 function filterCategory(category,button){
 
@@ -598,7 +1063,9 @@ function filterCategory(category,button){
 
   document
     .querySelectorAll(".category")
-    .forEach(btn => btn.classList.remove("active"));
+    .forEach(btn =>
+      btn.classList.remove("active")
+    );
 
   button.classList.add("active");
 
@@ -607,15 +1074,105 @@ function filterCategory(category,button){
 }
 
 
-/* =========================
-   ADD TO CART
-========================= */
+/* ==========================
+   FAVORITES
+========================== */
+
+function toggleFavorite(id){
+
+  if(favorites.includes(id)){
+
+    favorites =
+      favorites.filter(item => item !== id);
+
+  }else{
+
+    favorites.push(id);
+
+  }
+
+  displayProducts();
+
+}
+
+
+function showFavorites(){
+
+  if(favorites.length === 0){
+
+    alert("You haven't added any favorites yet.");
+
+    return;
+
+  }
+
+  document
+    .getElementById("search")
+    .value = "";
+
+  const container =
+    document.getElementById("products");
+
+  const favoriteProducts =
+    products.filter(product =>
+      favorites.includes(product.id)
+    );
+
+  container.innerHTML =
+    favoriteProducts.map(product => `
+
+      <div class="product">
+
+        <button
+          class="favorite active"
+          onclick="toggleFavorite(${product.id})"
+        >
+          ♥
+        </button>
+
+        <div class="product-image">
+          ${product.icon}
+        </div>
+
+        <div class="product-info">
+
+          <h3>${product.name}</h3>
+
+          <div class="category-name">
+            ${product.category}
+          </div>
+
+          <div class="price">
+            SLE ${product.price.toLocaleString()}
+          </div>
+
+          <button
+            class="add-btn"
+            onclick="addToCart(${product.id})"
+          >
+            🛒 Add to Cart
+          </button>
+
+        </div>
+
+      </div>
+
+    `).join("");
+
+}
+
+
+/* ==========================
+   CART
+========================== */
 
 function addToCart(id){
 
-  const product = products.find(p => p.id === id);
+  const product =
+    products.find(item => item.id === id);
 
-  const existing = cart.find(item => item.id === id);
+  const existing =
+    cart.find(item => item.id === id);
 
   if(existing){
 
@@ -634,94 +1191,6 @@ function addToCart(id){
 
 }
 
-
-/* =========================
-   UPDATE CART
-========================= */
-
-function updateCart(){
-
-  const cartItems =
-    document.getElementById("cartItems");
-
-  const cartCount =
-    document.getElementById("cartCount");
-
-  const cartTotal =
-    document.getElementById("cartTotal");
-
-
-  let totalQuantity = 0;
-  let totalPrice = 0;
-
-
-  cart.forEach(item => {
-
-    totalQuantity += item.quantity;
-
-    totalPrice +=
-      item.price * item.quantity;
-
-  });
-
-
-  cartCount.textContent = totalQuantity;
-
-  cartTotal.textContent =
-    "SLE " + totalPrice.toLocaleString();
-
-
-  if(cart.length === 0){
-
-    cartItems.innerHTML =
-      `<div class="empty">Your cart is empty.</div>`;
-
-    return;
-
-  }
-
-
-  cartItems.innerHTML = cart.map(item => `
-
-    <div class="cart-item">
-
-      <strong>${item.name}</strong>
-
-      <div>
-        SLE ${item.price.toLocaleString()}
-      </div>
-
-      <div class="cart-controls">
-
-        <button onclick="changeQuantity(${item.id},-1)">
-          −
-        </button>
-
-        <span>${item.quantity}</span>
-
-        <button onclick="changeQuantity(${item.id},1)">
-          +
-        </button>
-
-        <button
-          class="remove"
-          onclick="removeFromCart(${item.id})"
-        >
-          Remove
-        </button>
-
-      </div>
-
-    </div>
-
-  `).join("");
-
-}
-
-
-/* =========================
-   CHANGE QUANTITY
-========================= */
 
 function changeQuantity(id,change){
 
@@ -744,10 +1213,6 @@ function changeQuantity(id,change){
 }
 
 
-/* =========================
-   REMOVE
-========================= */
-
 function removeFromCart(id){
 
   cart =
@@ -758,10 +1223,6 @@ function removeFromCart(id){
 }
 
 
-/* =========================
-   CLEAR CART
-========================= */
-
 function clearCart(){
 
   cart = [];
@@ -771,9 +1232,98 @@ function clearCart(){
 }
 
 
-/* =========================
-   OPEN / CLOSE CART
-========================= */
+function updateCart(){
+
+  const items =
+    document.getElementById("cartItems");
+
+  const count =
+    document.getElementById("cartCount");
+
+  const total =
+    document.getElementById("cartTotal");
+
+
+  let quantity = 0;
+  let price = 0;
+
+
+  cart.forEach(item => {
+
+    quantity += item.quantity;
+
+    price +=
+      item.price * item.quantity;
+
+  });
+
+
+  count.textContent = quantity;
+
+  total.textContent =
+    "SLE " + price.toLocaleString();
+
+
+  if(cart.length === 0){
+
+    items.innerHTML =
+      `<div style="text-align:center;padding:40px;color:#777;">
+        🛒 Your cart is empty.
+      </div>`;
+
+    return;
+
+  }
+
+
+  items.innerHTML =
+    cart.map(item => `
+
+      <div class="cart-item">
+
+        <strong>${item.name}</strong>
+
+        <div>
+          SLE ${item.price.toLocaleString()}
+        </div>
+
+        <div class="cart-controls">
+
+          <button
+            class="qty"
+            onclick="changeQuantity(${item.id},-1)"
+          >
+            −
+          </button>
+
+          <span>${item.quantity}</span>
+
+          <button
+            class="qty"
+            onclick="changeQuantity(${item.id},1)"
+          >
+            +
+          </button>
+
+          <button
+            class="remove"
+            onclick="removeFromCart(${item.id})"
+          >
+            Remove
+          </button>
+
+        </div>
+
+      </div>
+
+    `).join("");
+
+}
+
+
+/* ==========================
+   CART PANEL
+========================== */
 
 function openCart(){
 
@@ -793,27 +1343,60 @@ function closeCart(){
 }
 
 
-/* =========================
-   WHATSAPP ORDER
-========================= */
+/* ==========================
+   WHATSAPP
+========================== */
 
 function orderWhatsApp(){
 
   if(cart.length === 0){
 
-    alert("Your cart is empty.");
+    alert("Please add a product to your cart first.");
 
     return;
 
   }
 
 
-  let message =
-    "Hello SILLAH'S LEGACY!%0A%0A" +
-    "I would like to place an order:%0A%0A";
+  const name =
+    document.getElementById("customerName").value.trim();
+
+  const phone =
+    document.getElementById("customerPhone").value.trim();
+
+  const address =
+    document.getElementById("customerAddress").value.trim();
+
+
+  if(!name || !phone || !address){
+
+    alert(
+      "Please enter your name, phone number and delivery location."
+    );
+
+    return;
+
+  }
 
 
   let total = 0;
+
+  let message =
+    "Hello SILLAH'S LEGACY!%0A%0A" +
+    "I would like to place an order.%0A%0A";
+
+
+  message +=
+    "Customer: " + encodeURIComponent(name) + "%0A";
+
+  message +=
+    "Phone: " + encodeURIComponent(phone) + "%0A";
+
+  message +=
+    "Delivery: " + encodeURIComponent(address) + "%0A%0A";
+
+
+  message += "ORDER:%0A";
 
 
   cart.forEach(item => {
@@ -823,10 +1406,9 @@ function orderWhatsApp(){
 
     total += subtotal;
 
-
     message +=
       "• " +
-      item.name +
+      encodeURIComponent(item.name) +
       " × " +
       item.quantity +
       " — SLE " +
@@ -837,10 +1419,10 @@ function orderWhatsApp(){
 
 
   message +=
-    "%0A*Total: SLE " +
+    "%0ATotal: SLE " +
     total.toLocaleString() +
-    "*%0A%0A" +
-    "Please confirm my order. Thank you!";
+    "%0A%0A" +
+    "Thank you!";
 
 
   window.open(
@@ -854,9 +1436,9 @@ function orderWhatsApp(){
 }
 
 
-/* =========================
+/* ==========================
    START
-========================= */
+========================== */
 
 displayProducts();
 
