@@ -12,6 +12,10 @@
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: Arial, sans-serif;
       background: #f7f3ea;
@@ -23,17 +27,35 @@
       background: #111;
       color: #d4af37;
       text-align: center;
-      padding: 35px 20px;
+      padding: 25px 20px 35px;
     }
 
     header h1 {
       font-size: 32px;
       letter-spacing: 2px;
+      margin-top: 20px;
     }
 
     header p {
       color: white;
       margin-top: 8px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #d4af37;
     }
 
     .hero {
@@ -48,56 +70,38 @@
 
     .hero p {
       color: #555;
-      .shop-button {
-  display: inline-block;
-  margin-top: 20px;
-  background: #d4af37;
-  color: #111;
-  text-decoration: none;
-  padding: 12px 25px;
-  border-radius: 25px;
-  font-weight: bold;
-      }
     }
-.about {
-  max-width: 850px;
-  margin: 20px auto;
-  padding: 35px 25px;
-  text-align: center;
-  background: white;
-  border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-}
 
-.about h2 {
-  color: #b28a00;
-  margin-bottom: 12px;
-}
-
-.about p {
-  color: #555;
-}
-    .search-box {
-  grid-column: 1 / -1;
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-.search-box input {
-  width: 90%;
-  max-width: 500px;
-  padding: 12px 18px;
-  border: 1px solid #ddd;
-  border-radius: 25px;
-  font-size: 16px;
-  outline: none;
-}
-    .products-title {
-  grid-column: 1 / -1;
-  text-align: center;
-  color: #b28a00;
-  margin-bottom: 5px;
+    .shop-button {
+      display: inline-block;
+      margin-top: 20px;
+      background: #d4af37;
+      color: #111;
+      text-decoration: none;
+      padding: 12px 25px;
+      border-radius: 25px;
+      font-weight: bold;
     }
+
+    .about {
+      max-width: 850px;
+      margin: 20px auto;
+      padding: 35px 25px;
+      text-align: center;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    }
+
+    .about h2 {
+      color: #b28a00;
+      margin-bottom: 12px;
+    }
+
+    .about p {
+      color: #555;
+    }
+
     .products {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -107,27 +111,48 @@
       margin: auto;
     }
 
+    .products-title {
+      grid-column: 1 / -1;
+      text-align: center;
+      color: #b28a00;
+      margin-bottom: 5px;
+    }
+
+    .search-box {
+      grid-column: 1 / -1;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .search-box input {
+      width: 90%;
+      max-width: 500px;
+      padding: 12px 18px;
+      border: 1px solid #ddd;
+      border-radius: 25px;
+      font-size: 16px;
+      outline: none;
+    }
+
     .card {
       background: white;
       padding: 25px;
       text-align: center;
       border-radius: 15px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: 0.3s;
     }
+
     .card:hover {
-  transform: translateY(-5px);
-  transition: 0.3s;
+      transform: translateY(-5px);
     }
 
     .product-image {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 12px;
-  margin-bottom: 15px;
-    }
-    
-      
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 15px;
     }
 
     .card h3 {
@@ -138,6 +163,15 @@
       color: #b28a00;
       font-weight: bold;
       margin: 12px 0;
+    }
+
+    .quantity {
+      width: 70px;
+      padding: 8px;
+      margin: 5px 0 15px;
+      text-align: center;
+      border: 1px solid #ddd;
+      border-radius: 8px;
     }
 
     .whatsapp {
@@ -163,6 +197,10 @@
       margin-bottom: 12px;
     }
 
+    .contact p {
+      margin-bottom: 8px;
+    }
+
     footer {
       text-align: center;
       background: #000;
@@ -170,19 +208,18 @@
       padding: 15px;
       font-size: 14px;
     }
-    .back-to-top {
-  display: block;
-  width: fit-content;
-  margin: 20px auto;
-  background: #d4af37;
-  color: #111;
-  text-decoration: none;
-  padding: 10px 18px;
-  border-radius: 25px;
-  font-weight: bold;
-}
 
-</style>
+    .back-to-top {
+      display: block;
+      width: fit-content;
+      margin: 20px auto;
+      background: #d4af37;
+      color: #111;
+      text-decoration: none;
+      padding: 10px 18px;
+      border-radius: 25px;
+      font-weight: bold;
+    }
   </style>
 </head>
 
@@ -190,10 +227,11 @@
 
   <header>
     <nav>
-  <a href="#about">About</a>
-  <a href="#products">Products</a>
-  <a href="#contact">Contact</a>
+      <a href="#about">About</a>
+      <a href="#products">Products</a>
+      <a href="#contact">Contact</a>
     </nav>
+
     <h1>👑 SILLAH'S LEGACY 👑</h1>
     <p>Style • Elegance • Legacy</p>
   </header>
@@ -203,95 +241,124 @@
     <p>Discover products selected to add style and elegance to your everyday life.</p>
     <a href="#products" class="shop-button">Shop Now</a>
   </section>
-<section class="about"id="about">
-  <h2>About SILLAH'S LEGACY</h2>
-  <p>
-    SILLAH'S LEGACY is a growing lifestyle brand focused on style,
-    elegance, and quality. We offer carefully selected perfumes,
-    watches, and T-shirts designed to add something special to your everyday look.
-  </p>
-</section>
+
+  <section class="about" id="about">
+    <h2>About SILLAH'S LEGACY</h2>
+    <p>
+      SILLAH'S LEGACY is a growing lifestyle brand focused on style,
+      elegance, and quality. We offer carefully selected perfumes,
+      watches, and T-shirts designed to add something special to your everyday look.
+    </p>
+  </section>
+
   <section class="products" id="products">
+
     <h2 class="products-title">Featured Products</h2>
+
     <div class="search-box">
-  <input type="text" id="productSearch" placeholder="Search products...">
+      <input type="text" id="productSearch" placeholder="Search products...">
     </div>
 
     <div class="card">
-      <img class="product-image" src="https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=600&q=80" alt="Perfume">
+      <img class="product-image"
+        src="https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=600&q=80"
+        alt="Perfume">
+
       <h3>Perfumes</h3>
       <p>Beautiful fragrances for every occasion.</p>
       <div class="price">Le 150,000</div>
-      <a class="whatsapp" href="https://wa.me/23273520329?text=Hello%20SILLAH'S%20LEGACY,%20I'd%20like%20to%20order%20a%20perfume.">Order on WhatsApp</a>
-  
-  
-  
-  
 
-}
+      <label>
+        Quantity:
+        <input class="quantity" type="number" min="1" value="1" id="perfumeQty">
+      </label>
+
+      <br>
+
+      <a class="whatsapp"
+        href="https://wa.me/23273520329?text=Hello%20SILLAH'S%20LEGACY,%20I'd%20like%20to%20order%20a%20perfume.">
+        Order on WhatsApp
+      </a>
     </div>
 
     <div class="card">
-      <img class="product-image" src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=600&q=80" alt="Watch">
+      <img class="product-image"
+        src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=600&q=80"
+        alt="Watch">
+
       <h3>Watches</h3>
       <p>Elegant watches for a timeless look.</p>
       <div class="price">Le 250,000</div>
-      <a class="whatsapp"<a class="whatsapp" href="https://wa.me/23273520329?text=Hello%20SILLAH'S%20LEGACY,%20I'd%20like%20to%20order%20a%20watch.">Order on WhatsApp</a> 
+
+      <label>
+        Quantity:
+        <input class="quantity" type="number" min="1" value="1" id="watchQty">
+      </label>
+
+      <br>
+
+      <a class="whatsapp"
+        href="https://wa.me/23272152395?text=Hello%20SILLAH'S%20LEGACY,%20I'd%20like%20to%20order%20a%20watch.">
+        Order on WhatsApp
+      </a>
     </div>
 
     <div class="card">
-      <img class="product-image" src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=600&q=80" alt="T-Shirt">
+      <img class="product-image"
+        src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=600&q=80"
+        alt="T-Shirt">
+
       <h3>T-Shirts</h3>
       <p>Stylish T-shirts for everyday wear.</p>
       <div class="price">Le 200,000</div>
-      <a class="whatsapp" <a class="whatsapp" href="https://wa.me/23273520329?text=Hello%20SILLAH'S%20LEGACY,%20I'd%20like%20to%20order%20a%20T-shirt.">Order on WhatsApp</a>
+
+      <label>
+        Quantity:
+        <input class="quantity" type="number" min="1" value="1" id="shirtQty">
+      </label>
+
+      <br>
+
+      <a class="whatsapp"
+        href="https://wa.me/23273520329?text=Hello%20SILLAH'S%20LEGACY,%20I'd%20like%20to%20order%20a%20T-shirt.">
+        Order on WhatsApp
+      </a>
     </div>
 
   </section>
 
-  <section class="contact"id="contact">
+  <section class="contact" id="contact">
     <h2>Contact SILLAH'S LEGACY</h2>
     <p>WhatsApp: +232 73520329</p>
-    <a class="whatsapp" href="https://wa.me/23273520329?text=Hello%20SILLAH'S%20LEGACY,%20I'd%20like%20to%20make%20an%20inquiry.">WhatsApp Us</a>
-    
+    <p>WhatsApp: +232 72152395</p>
+
+    <br>
+
+    <a class="whatsapp"
+      href="https://wa.me/23273520329?text=Hello%20SILLAH'S%20LEGACY,%20I'd%20like%20to%20make%20an%20inquiry.">
+      WhatsApp Us
+    </a>
   </section>
 
   <footer>
     © 2026 SILLAH'S LEGACY. All rights reserved.
   </footer>
 
-<a href="#" class="back-to-top">↑ Back to Top</a>
-<script>
-  const searchInput = document.getElementById("productSearch");
-  const cards = document.querySelectorAll(".card");
+  <a href="#" class="back-to-top">↑ Back to Top</a>
 
-  searchInput.addEventListener("input", function() {
-    const search = this.value.toLowerCase();
+  <script>
+    const searchInput = document.getElementById("productSearch");
+    const cards = document.querySelectorAll(".card");
 
-    cards.forEach(function(card) {
-      const text = card.textContent.toLowerCase();
-      card.style.display = text.includes(search) ? "" : "none";
+    searchInput.addEventListener("input", function() {
+      const search = this.value.toLowerCase();
+
+      cards.forEach(function(card) {
+        const text = card.textContent.toLowerCase();
+        card.style.display = text.includes(search) ? "" : "none";
+      });
     });
-  });
-</script>
-</body>
+  </script>
+
 </body>
 </html>
-                  
-
-  
-
-
-
-
-    
-
-
-
-
-
-
-
-  
-
-  
