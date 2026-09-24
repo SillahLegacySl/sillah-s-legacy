@@ -2,16 +2,17 @@
   "name": "SILLAH'S LEGACY",
   "short_name": "SILLAH'S LEGACY",
   "description": "Premium perfumes, watches, T-shirts and more.",
-  "start_url": "./index.html",
+  "start_url": "./",
   "display": "standalone",
   "background_color": "#111111",
-  "theme_color": "#ff8c00",
+  "theme_color": "#d4af37",
   "orientation": "portrait",
   "icons": [
-  {
-    "src": "file_00000000ee0c81f4b10682ae9fc5d2a6.png",
-    "sizes": "1024x1024",
-    "type": "image/png"
-  }
+    {
+      "src": "file_00000000ee0c81f4b10682ae9fc5d2a6.png",
+      "sizes": "1024x1024",
+      "type": "image/png"
+    }
   ]
 }
+  
