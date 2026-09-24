@@ -1,0 +1,10 @@
+{
+  "name": "SILLAH'S LEGACY",
+  "short_name": "SILLAH'S LEGACY",
+  "description": "Premium perfumes, watches, T-shirts and more.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#111111",
+  "theme_color": "#ff8c00",
+  "orientation": "portrait"
+}
