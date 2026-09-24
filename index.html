@@ -4,83 +4,218 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SILLAH'S LEGACY</title>
+
 <style>
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#f7f5f0;color:#222}
-header{background:#111;color:#d4af37;text-align:center;padding:25px 15px}
-header h1{margin:0;font-size:30px}
-header p{color:white;margin:8px 0 0}
-nav{background:#222;text-align:center;padding:12px}
-nav a{color:white;text-decoration:none;margin:0 12px}
-.hero{text-align:center;padding:45px 20px;background:linear-gradient(135deg,#111,#333)}
-.hero h2{color:#d4af37;font-size:32px;margin:0 0 10px}
-.hero p{color:white}
-.products{padding:25px 15px;max-width:1000px;margin:auto}
-.products h2{text-align:center}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
-.card{background:white;border-radius:12px;padding:20px;text-align:center;box-shadow:0 3px 12px #0002}
-.icon{font-size:60px}
-.card h3{margin:10px 0}
-.price{font-weight:bold;color:#b38b00;font-size:20px}
-button{background:#111;color:#d4af37;border:0;padding:12px 18px;border-radius:8px;margin-top:10px;font-weight:bold}
-footer{margin-top:30px;background:#111;color:white;text-align:center;padding:25px}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  color: #222;
+}
+
+header {
+  background: #111;
+  color: #d4af37;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 27px;
+}
+
+header p {
+  color: white;
+  margin-bottom: 0;
+}
+
+nav {
+  background: #222;
+  display: flex;
+  justify-content: space-around;
+  padding: 13px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.hero {
+  background: linear-gradient(135deg, #111, #444);
+  color: white;
+  text-align: center;
+  padding: 45px 20px;
+}
+
+.hero h2 {
+  color: #d4af37;
+  font-size: 30px;
+}
+
+.hero button {
+  background: #d4af37;
+  border: none;
+  padding: 13px 25px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.products {
+  padding: 25px 15px;
+}
+
+.products h2 {
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+}
+
+.card {
+  background: white;
+  padding: 18px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 3px 10px #0002;
+}
+
+.product-icon {
+  font-size: 55px;
+}
+
+.card h3 {
+  margin: 10px 0;
+}
+
+.price {
+  color: #b38b00;
+  font-size: 19px;
+  font-weight: bold;
+}
+
+.card button {
+  background: #111;
+  color: #d4af37;
+  border: none;
+  padding: 11px 18px;
+  border-radius: 7px;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.cart {
+  background: white;
+  margin: 20px 15px;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+footer {
+  background: #111;
+  color: white;
+  text-align: center;
+  padding: 25px;
+  margin-top: 30px;
+}
 </style>
 </head>
 
 <body>
 
 <header>
-<h1>👑 SILLAH'S LEGACY 👑</h1>
-<p>Premium Style. Legendary Quality.</p>
+  <h1>👑 SILLAH'S LEGACY 👑</h1>
+  <p>Premium Style. Legendary Quality.</p>
 </header>
 
 <nav>
-<a href="#home">Home</a>
-<a href="#products">Products</a>
-<a href="#contact">Contact</a>
+  <a href="#home">Home</a>
+  <a href="#shop">Shop</a>
+  <a href="#cart">🛒 Cart</a>
 </nav>
 
 <section class="hero" id="home">
-<h2>WELCOME TO SILLAH'S LEGACY</h2>
-<p>Discover perfumes, watches, T-shirts and more.</p>
+  <h2>WELCOME TO SILLAH'S LEGACY</h2>
+  <p>Discover products made for your style.</p>
+  <button onclick="location.href='#shop'">Shop Now</button>
 </section>
 
-<section class="products" id="products">
-<h2>Our Products</h2>
+<section class="products" id="shop">
+  <h2>🛍️ Our Products</h2>
 
-<div class="grid">
+  <div class="grid">
 
-<div class="card">
-<div class="icon">🪄</div>
-<h3>Royal Perfume</h3>
-<p>Elegant fragrance for everyday confidence.</p>
-<div class="price">SLE 350</div>
-<button>Order Now</button>
-</div>
+    <div class="card">
+      <div class="product-icon">🌹</div>
+      <h3>Royal Perfume</h3>
+      <p>Elegant fragrance for everyday confidence.</p>
+      <div class="price">SLE 350</div>
+      <button onclick="addToCart('Royal Perfume', 350)">
+        Add to Cart
+      </button>
+    </div>
 
-<div class="card">
-<div class="icon">⌚</div>
-<h3>Legend Watch</h3>
-<p>Classic style with a premium look.</p>
-<div class="price">SLE 750</div>
-<button>Order Now</button>
-</div>
+    <div class="card">
+      <div class="product-icon">⌚</div>
+      <h3>Legend Watch</h3>
+      <p>Classic style with a premium look.</p>
+      <div class="price">SLE 750</div>
+      <button onclick="addToCart('Legend Watch', 750)">
+        Add to Cart
+      </button>
+    </div>
 
-<div class="card">
-<div class="icon">👕</div>
-<h3>Legend T-Shirt</h3>
-<p>Comfortable and stylish everyday wear.</p>
-<div class="price">SLE 300</div>
-<button>Order Now</button>
-</div>
+    <div class="card">
+      <div class="product-icon">👕</div>
+      <h3>Legacy T-Shirt</h3>
+      <p>Comfortable and stylish everyday wear.</p>
+      <div class="price">SLE 300</div>
+      <button onclick="addToCart('Legacy T-Shirt', 300)">
+        Add to Cart
+      </button>
+    </div>
 
-</div>
+  </div>
 </section>
 
-<footer id="contact">
-<p>© 2026 SILLAH'S LEGEND</p>
-<p>Premium products. Legendary style. 👑</p>
+<section class="cart" id="cart">
+  <h2>🛒 Your Cart</h2>
+  <p id="cartText">Your cart is empty.</p>
+</section>
+
+<footer>
+  <p>© 2026 SILLAH'S LEGACY</p>
+  <p>Premium products. Legendary style. 👑</p>
 </footer>
+
+<script>
+let cart = [];
+
+function addToCart(name, price) {
+  cart.push({name: name, price: price});
+
+  let total = 0;
+  let items = "";
+
+  cart.forEach(function(item) {
+    items += item.name + " - SLE " + item.price + "<br>";
+    total += item.price;
+  });
+
+  document.getElementById("cartText").innerHTML =
+    items + "<br><strong>Total: SLE " + total + "</strong>";
+}
+</script>
 
 </body>
 </html>
