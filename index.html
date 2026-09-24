@@ -77,6 +77,21 @@
 .about p {
   color: #555;
 }
+    .search-box {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.search-box input {
+  width: 90%;
+  max-width: 500px;
+  padding: 12px 18px;
+  border: 1px solid #ddd;
+  border-radius: 25px;
+  font-size: 16px;
+  outline: none;
+}
     .products-title {
   grid-column: 1 / -1;
   text-align: center;
@@ -198,6 +213,9 @@
 </section>
   <section class="products" id="products">
     <h2 class="products-title">Featured Products</h2>
+    <div class="search-box">
+  <input type="text" id="productSearch" placeholder="Search products...">
+    </div>
 
     <div class="card">
       <img class="product-image" src="https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=600&q=80" alt="Perfume">
@@ -243,7 +261,19 @@
   </footer>
 
 <a href="#" class="back-to-top">↑ Back to Top</a>
+<script>
+  const searchInput = document.getElementById("productSearch");
+  const cards = document.querySelectorAll(".card");
 
+  searchInput.addEventListener("input", function() {
+    const search = this.value.toLowerCase();
+
+    cards.forEach(function(card) {
+      const text = card.textContent.toLowerCase();
+      card.style.display = text.includes(search) ? "" : "none";
+    });
+  });
+</script>
 </body>
 </body>
 </html>
