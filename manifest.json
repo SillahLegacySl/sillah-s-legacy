@@ -1,6 +1,6 @@
 {
-  "name": "SILLAH'S LEGACY",
-  "short_name": "SILLAH'S LEGACY",
+  "name": "SILLAH'S LEGACY - ENTERPRISE",
+  "short_name": "SILLAH'S LEGACY - ENTERPRISE",
   "description": "Premium perfumes, watches, T-shirts and more.",
   "start_url": "./",
   "display": "standalone",
@@ -9,7 +9,7 @@
   "orientation": "portrait",
   "icons": [
     {
-      "src": "file_00000000ee0c81f4b10682ae9fc5d2a6.png",
+      src": "file_00000000ee0c81f4b10682ae9fc5d2a6
       "sizes": "1024x1024",
       "type": "image/png"
     }
